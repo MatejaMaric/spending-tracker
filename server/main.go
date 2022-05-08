@@ -12,7 +12,7 @@ func main() {
 	server := gin.Default()
 
 	corsConfig := cors.Config{
-		AllowMethods:     []string{"GET", "POST", "OPTIONS", "PUT"},
+		AllowMethods:     []string{"OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE"},
 		AllowHeaders:     []string{"Origin", "Content-Length", "Content-Type", "User-Agent", "Referrer", "Host", "Token"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
