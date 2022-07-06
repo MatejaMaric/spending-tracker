@@ -6,6 +6,9 @@ My bank doesn't have open API endpoints for me to use, so I need to scrape HTML 
 
 ## How to run this project:
 
+This project uses [Fyne](https://fyne.io), so you we will need to install libraries it requires for your platform.
+
 ```
-docker-compose up
+go build -v
+./spending-tracker
 ```

@@ -2,19 +2,16 @@ package models
 
 import (
 	"log"
-	"os"
 
-	"gorm.io/driver/postgres"
+	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
 
 var DB *gorm.DB
 
-func Connect() {
-	dbEnv := os.Getenv("DB_CONN")
-
+func Connect(dbPath string) {
 	var err error
-	DB, err = gorm.Open(postgres.Open(dbEnv), &gorm.Config{})
+	DB, err = gorm.Open(sqlite.Open(dbPath), &gorm.Config{})
 	if err != nil {
 		log.Println("Can't connect to database!")
 	} else {

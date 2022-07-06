@@ -6,7 +6,7 @@ import (
 
 	"golang.org/x/net/html"
 
-	"github.com/MatejaMaric/spending-tracker/server/models"
+	"github.com/MatejaMaric/spending-tracker/models"
 )
 
 func ExtractTransactions(n *html.Node) []models.Transaction {
