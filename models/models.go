@@ -13,7 +13,7 @@ func Connect(dbPath string) {
 	var err error
 	DB, err = gorm.Open(sqlite.Open(dbPath), &gorm.Config{})
 	if err != nil {
-		log.Println("Can't connect to database!")
+		log.Fatal("Can't connect to database!")
 	} else {
 		DB.AutoMigrate(&Transaction{})
 	}

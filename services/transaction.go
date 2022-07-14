@@ -1,4 +1,4 @@
-package controllers
+package services
 
 import (
 	"strings"
@@ -22,8 +22,11 @@ func CreateTransactions(text string) (addedRows int64, err error) {
 		return 0, err
 	}
 
+	var n int64
 	transactions := parser.ExtractTransactions(table)
-	n := models.DB.Clauses(clause.OnConflict{DoNothing: true}).Create(&transactions).RowsAffected
+	if len(transactions) > 0 {
+		n = models.DB.Clauses(clause.OnConflict{DoNothing: true}).Create(&transactions).RowsAffected
+	}
 
 	return n, nil
 }
