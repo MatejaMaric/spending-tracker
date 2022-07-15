@@ -30,3 +30,7 @@ func CreateTransactions(text string) (addedRows int64, err error) {
 
 	return n, nil
 }
+
+func UpdateTransactionPersonalDescription(ID []byte, personalDescription string) error {
+	return models.DB.Model(&models.Transaction{}).Where("id = ?", ID).Update("personal_description", personalDescription).Error
+}
