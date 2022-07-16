@@ -6,7 +6,10 @@ import (
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
+	"github.com/MatejaMaric/spending-tracker/models"
 )
+
+var transactions []models.Transaction
 
 func Run() {
 	a := app.New()

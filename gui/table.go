@@ -13,7 +13,7 @@ import (
 )
 
 func createTransactionTable(w *fyne.Window) fyne.CanvasObject {
-	transactions := services.GetTransactions()
+	transactions = services.GetTransactions()
 
 	tableHeader := func() fyne.CanvasObject {
 		transactionLabels := container.NewGridWithColumns(7,
@@ -99,6 +99,8 @@ func createTransactionTable(w *fyne.Window) fyne.CanvasObject {
 					if err != nil {
 						dialog.ShowError(err, *w)
 					} else {
+						transactions = services.GetTransactions()
+						(*w).Content().Refresh()
 						dialog.ShowInformation("Success!", "Transaction successfully edited!", *w)
 					}
 				}
@@ -131,6 +133,8 @@ func createAddTransactionBtn(w *fyne.Window) *widget.Button {
 				if err != nil {
 					dialog.ShowError(err, *w)
 				} else {
+					transactions = services.GetTransactions()
+					(*w).Content().Refresh()
 					dialog.ShowInformation("New Transactions Added", fmt.Sprintf("Number of added transactions: %d\n", addedRows), *w)
 				}
 			}
