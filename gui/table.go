@@ -31,7 +31,7 @@ func createTransactionTable(w *fyne.Window) fyne.CanvasObject {
 	newListItem := func() fyne.CanvasObject {
 		madeAtLbl := widget.NewLabel("MadeAt")
 		processedAtLbl := widget.NewLabel("ProcessedAt")
-		descriptionLbl := widget.NewLabel("Description")
+		descriptionLbl := widget.NewLabel("\n\r\n\r\n\r")
 		paidLbl := widget.NewLabel("Paid")
 		receivedLbl := widget.NewLabel("Received")
 		balanceLbl := widget.NewLabel("Balance")
