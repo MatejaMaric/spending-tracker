@@ -1,3 +1,9 @@
+**I stopped working on this project because now I'm using GnuCash. I found out
+that my banks supports exporting transactions into CSV, which GnuCash is able
+to import. Although GnuCash is kind of clunky it does everything I need and
+more. On the positive note, I learned quite a bit from this project and I have
+a strange feeling that this code will prove useful in the future.**
+
 # About this project:
 
 I'm making this app to help me easily label and plot my transactions.
